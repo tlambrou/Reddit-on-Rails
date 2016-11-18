@@ -1,2 +1,11 @@
 <h4><%= @post.title %></h4>
 <p><%= @post.content %></p>
+
+<%= form_for [@post, @comment] do |f| %>
+  <%= f.text_area :content, class: "form-control" %>
+  <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>
+
+<% @post.comments.each do |c| %>
+  <p><%= c.content %></p>
+<% end %>
