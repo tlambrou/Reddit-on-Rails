@@ -1,0 +1,10 @@
+<h2><%= @sub.name %></h2>
+
+<% @sub.posts.each do |p| %>
+  <p>
+    <%= link_to p.title. sub_post_path(@sub, p) %>
+  </p>
+  <p>
+    <%= p.body %>
+  </p>
+<% end %>

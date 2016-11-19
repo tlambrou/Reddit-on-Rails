@@ -1,11 +1,18 @@
 <h4><%= @post.title %></h4>
 <p><%= @post.content %></p>
 
+<hr>
+<h5>Comments</h5>
+<%= flash[:notice] if flash[:notice] %>
 <%= form_for [@post, @comment] do |f| %>
-  <%= f.text_area :content, class: "form-control" %>
-  <%= f.submit "Save", class: "btn btn-primary" %>
+  <div class="form-group">
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+  <div class="text-xs-right">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
 <% end %>
-
+<br>
 <% @post.comments.each do |c| %>
   <p><%= c.content %></p>
 <% end %>
