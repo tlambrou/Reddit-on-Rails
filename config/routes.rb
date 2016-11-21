@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :subs, only: [:new, :create, :show] do
-    resources :posts, only: [:index, :new, :create, :show]
+
+  resources :subs, only: [:index, :new, :create, :show] do
+    resources :posts, only: [:index, :new, :create]
   end
 
   resources :posts, only: [:show] do
@@ -10,6 +11,6 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root to: 'posts#index'
+  root to: 'subs#index'
 
 end

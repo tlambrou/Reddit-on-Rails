@@ -4,6 +4,10 @@ class SubsController < ApplicationController
      @sub = Sub.new
   end
 
+  def index
+    @subs = Sub.all
+  end
+
   def create
     @sub = Sub.new(sub_params)
     if @sub.save

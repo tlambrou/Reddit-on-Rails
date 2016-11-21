@@ -1,7 +1,7 @@
 <legend>New Post</legend>
-<%= form_for(@post) do |f| %>
+<%= form_for [@sub, @post] do |f| %>
   <p><%= f.text_field :title %></p>
   <p><%= f.text_field :url %></p>
-  <p><%= f.text_area :content %></p>
-  <%= f.submit %>
+  <p><%= f.text_area :content, class: "form-control" %></p>
+  <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>

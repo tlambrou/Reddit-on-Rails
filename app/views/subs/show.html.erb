@@ -1,10 +1,12 @@
 <h2><%= @sub.name %></h2>
+<%= link_to "New Post", new_sub_post_path(@sub), class: "btn btn-outline-danger"%>
+</br></br>
 
-<% @sub.posts.each do |p| %>
+<% @sub.posts.each do |c| %>
   <p>
-    <%= link_to p.title. sub_post_path(@sub, p) %>
+    <%= link_to c.title, c %>
   </p>
   <p>
-    <%= p.body %>
+    <%= c.content %>
   </p>
 <% end %>

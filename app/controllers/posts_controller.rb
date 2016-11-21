@@ -1,17 +1,23 @@
 class PostsController < ApplicationController
   def index
+    @sub = Sub.find(params[:sub_id])
     @posts = Post.all
   end
 
   def new
+    @sub = Sub.find(params[:sub_id])
     @post = Post.new
   end
 
   def create
-    @post = Post.new(post_params)
+    @sub = Sub.find(params[:sub_id])
+    @post = @sub.posts.new(post_params)
 
     if @post.save
-      redirect_to root_path
+      redirect_to @sub
+    else
+      redirect_to @sub
+      flash[:notice] = "Post could not be saved."
     end
   end
 

@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class SubTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "has proper validations" do
+    @sub = Sub.new()
+    assert @sub.invalid?
+  end
 end
