@@ -1,5 +1,6 @@
 <% @subs.each do |p| %>
   <p><%= link_to p.name, p %></p>
 <% end %>
-
+<div class="text-xs-right">
 <%= link_to "New SubReddit", new_sub_path, class: "btn btn-outline-danger"%>
+</div>
